@@ -12,7 +12,8 @@ app = fastapi.FastAPI()
 userid: int
 
 # 3. Import dataset
-df = pd.read_csv(r'C:\Users\khale\Desktop\projet 7\data.csv.csv', low_memory=False)
+df = pd.read_csv(op.join(op.dirname(op.realpath(__file__), 'Data.csv.csv')),
+                 low_memory=False)
 
 # 4. Make a prediction based on the user-entered id
 # Returns the predicted class with its respective probability
@@ -20,7 +21,7 @@ df = pd.read_csv(r'C:\Users\khale\Desktop\projet 7\data.csv.csv', low_memory=Fal
 def predict_score(userid):
     int_id = int(userid)
     # load the model from disk
-    model = pickle.load(open(op.join(r'C:\Users\khale\Desktop\projet 7\light_gbm_f2.sav'), 'rb'))
+    model = pickle.load(open(op.join(op.join(op.dirname(op.realpath(__file__), 'light_gbm_f2.sav'))), 'rb'))
     data_in = df[df['identifiant'] == int_id]
     del (data_in['identifiant'])
     prediction = model.predict(data_in)
