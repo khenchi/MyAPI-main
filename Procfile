@@ -1,1 +1,1 @@
-web: uvicorn FastApi:app --workers 4
+web: uvicorn FastApi:app --workers 1
