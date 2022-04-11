@@ -1,1 +1,1 @@
-web: uvicorn FastApi:app --log-file -
+web: uvicorn FastApi:app --workers 4
