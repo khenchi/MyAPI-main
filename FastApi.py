@@ -17,7 +17,7 @@ df = pd.read_csv(op.join(op.dirname(op.realpath(__file__)), 'data.csv'),
 
 # 4. Make a prediction based on the user-entered id
 # Returns the predicted class with its respective probability
-@app.route('/predict/')
+@app.post('/predict')
 def predict_score(userid):
     int_id = int(userid)
     # load the model from disk
