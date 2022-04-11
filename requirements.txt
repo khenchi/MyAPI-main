@@ -2,4 +2,3 @@ pandas
 fastapi
 uvicorn
 lightgbm
-path
