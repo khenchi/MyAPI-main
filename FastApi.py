@@ -12,7 +12,7 @@ app = fastapi.FastAPI()
 userid: int
 
 # 3. Import dataset
-df = pd.read_csv(op.join(op.dirname(op.realpath(__file__), 'Data.csv.csv')),
+df = pd.read_csv(op.join(op.dirname(op.realpath(__file__)), 'data.csv'),
                  low_memory=False)
 
 # 4. Make a prediction based on the user-entered id
